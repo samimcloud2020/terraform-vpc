@@ -16,3 +16,32 @@ git push -u origin main
 git remote add origin https://github.com/samimcloud2020/terraform-vpc.git
 git branch -M main
 git push -u origin main
+----------------------------------------------------------------------------
+element Function
+element retrieves a single element from a list.
+
+element(list, index)
+Copy
+The index is zero-based. This function produces an error if used with an empty list. 
+The index must be a non-negative integer.
+
+Use the built-in index syntax list[index] in most cases. 
+Use this function only for the special additional "wrap-around" behavior described below.
+
+Examples
+> element(["a", "b", "c"], 1)
+b
+Copy
+If the given index is greater than the length of the list then
+the index is "wrapped around" by taking the index modulo the length of the list:
+
+> element(["a", "b", "c"], 3)
+a
+Copy
+To get the last element from the list use length to find
+the size of the list (minus 1 as the list is zero-based) and then pick the last element:
+
+> element(["a", "b", "c"], length(["a", "b", "c"])-1)
+c
+
+----------------------------------------------------------------------------------------------------------------------------
